@@ -1,4 +1,4 @@
-from typing import Callable, Any, Dict
+from typing import Callable, Any, Dict, Tuple
 from graders import Falling, Peaking, Growing
 from constants import Constants
 
@@ -17,7 +17,7 @@ class CredibilityEvaluator:
             Levels.HIGH: Falling.continuous(2, Constants.max_info_points)
         }
 
-    def grade(self, intensity: float) -> str:
+    def grade(self, intensity: float) -> Tuple[float, str]:
         """Find out which level of trust corresponds to specified intensity."""
 
         grades: Dict[float, str] = dict()
@@ -27,4 +27,4 @@ class CredibilityEvaluator:
 
         final_grade = max(grades)
 
-        return grades[final_grade]
+        return final_grade, grades[final_grade]

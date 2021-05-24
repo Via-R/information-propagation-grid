@@ -48,6 +48,9 @@ class Falling:
             if c <= 0:
                 raise GraderError("Parameter c should be bigger than 0")
 
+            if x >= c:
+                return 0
+
             return 1 - 1 / (1 + (x / (c - x) ** -beta))
 
         return inner
@@ -101,7 +104,10 @@ class Peaking:
             if x <= c:
                 return 1 / (1 + (x / (c - x) ** -beta))
 
-            return 1 - 1 / (1 + ((x - c) / (2 * c - x) ** -beta))
+            if x >= 2 * c:
+                return 0
+
+            return 1 - 1 / (1 + ((x - c) / (2 * c - x)) ** -beta)
 
         return inner
 
@@ -158,6 +164,9 @@ class Growing:
             if c <= 0:
                 raise GraderError("Parameter c should be bigger than 0")
 
-            return 1 / (1 + (x / (c - x) ** -beta))
+            if x >= c:
+                return 1
+
+            return 1 / (1 + (x / (c - x)) ** -beta)
 
         return inner

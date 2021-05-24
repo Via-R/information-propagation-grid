@@ -1,2 +1,2 @@
-# information-propagation-lattice
-Information propagation modeling on a 2D lattice
+# information-propagation-grid
+Information propagation modeling on a 2D grid

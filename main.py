@@ -1,18 +1,14 @@
-import asyncio
 from grid import Grid
 
 
-async def main():
+def main():
     print("Ready")
     side_size = 20
-    field = Grid(side_size+1)
-    field.place_propagator(side_size // 2, side_size // 2)
-    # field.matrix[0][0].credibility_evaluator.draw_graders()
-    # return
-    for _ in range(int(side_size * 1.7)):
-        await field.next()
-        field.draw()
+    field = Grid(window_side_length=800, side_size=side_size + 1)
+    field.place_propagator(row=side_size // 2, column=side_size // 2)
+    field.draw()
+    print("Done")
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

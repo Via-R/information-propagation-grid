@@ -19,10 +19,14 @@ def force_async(fn: Callable[..., Any]) -> Callable[..., Any]:
 
 
 def frange(start: float, stop: float, step: float):
+    """Analog to 'range' but with float step and bounds."""
+
     while start < stop:
         yield start
         start += step
 
 
 def print_json(obj: Union[Dict[Any, Any], List[Any]]) -> None:
+    """Display a dictionary or a list with indent."""
+
     print(json.dumps(obj, default=str, indent=4))

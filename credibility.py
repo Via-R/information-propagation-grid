@@ -1,20 +1,21 @@
 import matplotlib.pyplot as plt
 from typing import Callable, Any, Dict, Tuple
 from graders import Falling, Peaking, Growing
-from constants import Constants
+from constants import Constants, Colors
 from utils import frange
 
 
 class TrustLevel:
-    def __init__(self, name: str, value: int):
+    def __init__(self, name: str, value: int, color: Tuple[int, int, int]):
         self.name = name
         self.value = value
+        self.color = color
 
 
 class TrustLevels:
-    LOW = TrustLevel("low", 0)
-    MEDIUM = TrustLevel("medium", 1)
-    HIGH = TrustLevel("high", 2)
+    LOW = TrustLevel("low", 0, Colors.WHITE)
+    MEDIUM = TrustLevel("medium", 1, Colors.GREEN)
+    HIGH = TrustLevel("high", 2, Colors.RED)
 
 
 class CredibilityEvaluator:

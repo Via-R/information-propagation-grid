@@ -108,7 +108,7 @@ class Grid:
         """Draw a cell on the grid."""
 
         pygame.draw.rect(self.window, cell.info_trust_level.color,
-                         (cell.x, cell.y, cell.side_size / 1, cell.side_size / 1))
+                         (cell.x, cell.y, cell.side_size, cell.side_size))
 
     def _update_display(self) -> None:
         """Update grid status on screen."""

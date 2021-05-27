@@ -1,6 +1,12 @@
 class Constants:
     min_info_points: int = 0
     max_info_points: int = 10
+    window_side_length: int = 800
+    side_size = 40
+
+
+class Probabilities:
+    reversed_trust = 0.2
 
 
 class Colors:

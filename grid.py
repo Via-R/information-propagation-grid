@@ -42,7 +42,7 @@ class Grid:
             if surrounding_cell is None:
                 continue
             if surrounding_cell.info_trust_level.value > 1 and \
-                    surrounding_cell.info_trust_level.value > new_cell.info_trust_level.value:
+                    surrounding_cell.info_trust_level.value >= new_cell.info_trust_level.value:
                 # if surrounding_cell.info_points > new_cell.info_points:
                 if new_cell.is_full():
                     return

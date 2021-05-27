@@ -6,7 +6,7 @@ class Constants:
 
 
 class Probabilities:
-    reversed_trust = 0.2
+    reversed_trust = 0.4
 
 
 class Colors:

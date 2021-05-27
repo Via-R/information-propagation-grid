@@ -8,7 +8,7 @@ class CellError(Exception):
 
 class Cell:
     def __init__(self, row, col, width):
-        self.info_trust_level: TrustLevel = TrustLevels.LOW
+        self.info_trust_level: TrustLevel = TrustLevels.NULL
         self._info_points: int = Constants.min_info_points
         self._credibility_evaluator: CredibilityEvaluator = CredibilityEvaluator()
 

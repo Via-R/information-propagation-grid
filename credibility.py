@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from typing import Callable, Any, Dict, Tuple
-from graders import Falling, Peaking, Growing
+from graders import Falling, Peaking, Growing, Dot
 from constants import Constants, Colors
 from utils import frange
 
@@ -13,20 +13,24 @@ class TrustLevel:
 
 
 class TrustLevels:
-    LOW = TrustLevel("low", 0, Colors.WHITE)
-    MEDIUM = TrustLevel("medium", 1, Colors.GREEN)
-    HIGH = TrustLevel("high", 2, Colors.RED)
+    NULL = TrustLevel("null", 0, Colors.WHITE)
+    LOW = TrustLevel("low", 1, Colors.GREEN)
+    MEDIUM = TrustLevel("medium", 2, Colors.BLUE)
+    HIGH = TrustLevel("high", 3, Colors.RED)
 
 
 class CredibilityEvaluator:
     def __init__(self):
         self._graders = {
+            TrustLevels.NULL: Dot.dot(Constants.min_info_points),
             TrustLevels.LOW: Falling.continuous(2, Constants.max_info_points),
             TrustLevels.MEDIUM: Peaking.continuous_sinusoid(Constants.max_info_points / 2),
             TrustLevels.HIGH: Growing.continuous(2, Constants.max_info_points)
         }
 
     def draw_graders(self) -> None:
+        """Show all grader functions of this cell."""
+
         for level, grader in self._graders.items():
             xs = [x for x in frange(Constants.min_info_points, Constants.max_info_points, 0.1)]
             ys = [grader(x) for x in xs]

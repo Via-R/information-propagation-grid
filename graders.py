@@ -1,8 +1,36 @@
 from math import sin, pi
 
+_EPSILON: float = 1e-2
+
 
 class GraderError(Exception):
     pass
+
+
+class Dot:
+    @staticmethod
+    def dot(c: float):
+        def inner(x: float) -> float:
+            """Return 1 if x equals c and 0 otherwise."""
+
+            if c == x:
+                print(_EPSILON)
+                return 1 + _EPSILON
+
+            return 0
+
+        return inner
+
+
+class Constant:
+    @staticmethod
+    def constant(c: float):
+        def inner(x: float) -> float:
+            """Always return c, no matter the input."""
+
+            return c
+
+        return inner
 
 
 class Falling:

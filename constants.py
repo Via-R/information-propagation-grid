@@ -12,6 +12,10 @@ class Probabilities:
 class Colors:
     WHITE = (255, 255, 255)
     BLACK = (30, 30, 30)
-    GREEN = (0, 255, 0)
-    RED = (255, 0, 0)
-    BLUE = (0, 0, 255)
+    GREEN = (205, 220, 57)
+    RED = (255, 69, 0)
+    BLUE = (6, 29, 60)
+    PINK = (144, 77, 115)
+    ORANGE = (255, 144, 0)
+    YELLOW = (250, 211, 116)
+    GRAY = (189, 189, 189)

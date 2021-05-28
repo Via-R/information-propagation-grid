@@ -16,9 +16,9 @@ class TrustLevel:
 
 class TrustLevels:
     NULL = TrustLevel("null", 0, Colors.WHITE)
-    LOW = TrustLevel("low", 1, Colors.GREEN)
-    MEDIUM = TrustLevel("medium", 2, Colors.BLUE)
-    HIGH = TrustLevel("high", 3, Colors.RED)
+    LOW = TrustLevel("low", 1, Colors.YELLOW)
+    MEDIUM = TrustLevel("medium", 2, Colors.PINK)
+    HIGH = TrustLevel("high", 3, Colors.BLUE)
 
 
 class TrustArchetypes:

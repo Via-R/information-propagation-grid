@@ -97,11 +97,11 @@ class Grid:
         """Draw grid lines on the grid."""
 
         for i in range(self.side_size):
-            pygame.draw.line(self.window, Colors.BLACK, (0, i * self.cell_width),
+            pygame.draw.line(self.window, Colors.GRAY, (0, i * self.cell_width),
                              (self.side_length, i * self.cell_width))
             for j in range(self.side_size):
                 pygame.draw.line(
-                    self.window, Colors.BLACK, (j * self.cell_width, 0), (j * self.cell_width, self.side_length)
+                    self.window, Colors.GRAY, (j * self.cell_width, 0), (j * self.cell_width, self.side_length)
                 )
 
     def _draw_cell(self, cell: Cell) -> None:
@@ -137,7 +137,7 @@ class Grid:
         """Coroutine to continue propagation."""
 
         while True:
-            await asyncio.sleep(0.2)
+            await asyncio.sleep(0.012)
             self._next_iteration()
             self._update_display()
 

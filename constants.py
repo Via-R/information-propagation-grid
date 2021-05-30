@@ -3,7 +3,7 @@ class Constants:
     max_info_points: int = 30
     window_side_length: int = 800
     side_size = 40
-    max_forgotten_info_points: int = max_info_points * 2
+    max_forgotten_info_points: int = max_info_points * 1
 
 
 class Probabilities:

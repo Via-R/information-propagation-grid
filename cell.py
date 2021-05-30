@@ -1,5 +1,8 @@
+import random
+
 from credibility import CredibilityEvaluator, TrustLevels, TrustLevel
 from constants import Constants
+from utils import get_truncated_normal
 
 
 class CellError(Exception):
@@ -50,3 +53,15 @@ class Cell:
 
         self._info_points = points
         self.info_trust_level = self._credibility_evaluator.grade(points)
+
+    def _forget_info(self) -> None:
+        """Forget a random amount of info points."""
+
+        forgotten_delta = random.randint(0, Constants.max_forgotten_info_points - Constants.min_info_points)
+        # forgotten_delta = int(get_truncated_normal(
+        #     mean=0, sd=0.3, low=0,
+        #     upp=Constants.max_forgotten_info_points - Constants.min_info_points
+        # ))
+        allowed_delta = self._info_points - Constants.min_info_points
+        forgotten_points_amount = min(forgotten_delta, allowed_delta)
+        self._set_info_points(self._info_points - forgotten_points_amount)

@@ -38,6 +38,8 @@ class Grid:
     def _process_cell(new_cell: Cell, surrounding_cells: List[Optional[Cell]]) -> None:
         """Change cell status depending on its neighboring cells."""
 
+        new_cell._forget_info()
+
         for surrounding_cell in surrounding_cells:
             if surrounding_cell is None:
                 continue

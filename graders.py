@@ -14,7 +14,6 @@ class Dot:
             """Return 1 if x equals c and 0 otherwise."""
 
             if c == x:
-                print(_EPSILON)
                 return 1 + _EPSILON
 
             return 0
